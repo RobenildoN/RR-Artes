@@ -1,8 +1,14 @@
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #0f172a; /* Slate 900 */
+}
+
+.dark {
+  --background: #090d16; /* Premium dark background */
+  --foreground: #f8fafc; /* Slate 50 */
 }
 
 @theme inline {
@@ -10,17 +16,60 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  /* Brand Rosa (#f08bab) palette */
+  --color-rosa-50: #fef2f6;
+  --color-rosa-100: #fde6ed;
+  --color-rosa-200: #fbc1d4;
+  --color-rosa-300: #f7a0bc;
+  --color-rosa-400: #f08bab;
+  --color-rosa-500: #e4608b;
+  --color-rosa-600: #d44070;
+  --color-rosa-700: #b82d5a;
+  --color-rosa-800: #992749;
+  --color-rosa-900: #7d2340;
+  --color-rosa-950: #4d1125;
+
+  /* Brand Verde (#9ec883) palette */
+  --color-verde-50: #f4f9f0;
+  --color-verde-100: #e6f2de;
+  --color-verde-200: #cde5bf;
+  --color-verde-300: #afd49a;
+  --color-verde-400: #9ec883;
+  --color-verde-500: #7ab35e;
+  --color-verde-600: #5d9243;
+  --color-verde-700: #487237;
+  --color-verde-800: #3b5b2e;
+  --color-verde-900: #334d29;
+  --color-verde-950: #192a13;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1), color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Custom premium scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #1e293b;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
 }

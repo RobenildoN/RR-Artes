@@ -1,0 +1,112 @@
+Site da RR Artes 
+papelaria e miscelâneas, concerto de roupas e bordados
+
+na parte de papelaria possível comprar pelo site indicando se irá retirar na loja ou se será pedido entrega (entrega tem taxa)
+para compra na papelaria o cliente te quem ser cadastrado e estar logado.
+
+envio via site de pedido de orçamento que será direcionado para o email
+no email deve conter o tipo de pedido (selecionável obrigatório)(bordado, conserto de roupa), Nome do cliente, telefone, descrição do pedido e anexo de foto ou pdf
+
+atendimento via WhatsApp
+
+Crie um sistema web moderno para a empresa RR Artes utilizando TypeScript.
+
+O sistema deve ser desenvolvido com:
+
+* Next.js
+* React
+* TypeScript
+* Tailwind CSS
+* PostgreSQL
+* Prisma ORM
+
+Objetivo do sistema:
+A RR Artes é uma loja local de Hortolândia que trabalha com:
+
+* papelaria
+* miscelâneas
+* bordados
+* conserto de roupas
+
+Funcionalidades principais:
+
+1. Site institucional
+
+* Home
+* Sobre
+* Contato
+* Botão de atendimento via WhatsApp
+
+2. Papelaria online
+
+* Catálogo de produtos
+* Carrinho de compras
+* Login e cadastro obrigatório para comprar
+* Escolha entre retirada na loja ou entrega
+* Entrega possui taxa
+* Se o cliente estiver a mais de 5km da loja, permitir apenas retirada
+
+3. Sistema de orçamento
+   O cliente poderá enviar pedido de orçamento para:
+
+* bordado
+* conserto de roupa
+
+Campos obrigatórios:
+
+* tipo do pedido
+* nome
+* telefone
+* descrição
+* anexo de imagem ou PDF
+
+O formulário deve enviar os dados para um email da loja.
+
+4. Painel administrativo
+
+* cadastro de produtos
+* gerenciamento de pedidos
+* visualização de solicitações de orçamento
+
+Requisitos técnicos:
+
+* arquitetura organizada
+* componentes reutilizáveis
+* responsivo para mobile
+* SEO básico
+* autenticação segura
+* validação de formulários
+* upload de arquivos
+* integração futura com pagamentos online
+
+Organize o projeto seguindo boas práticas de desenvolvimento fullstack moderno.
+
+
+sugestão (pode fazer de forma melhor tambem) de estrutura de pastas:
+
+Frontend (Next.js)
+│
+├── Página institucional
+├── Catálogo da papelaria
+├── Carrinho
+├── Login/Cadastro
+├── Solicitação de orçamento
+└── WhatsApp
+
+Backend (API Routes)
+│
+├── Auth
+├── Produtos
+├── Pedidos
+├── Entregas
+├── Uploads
+└── Emails
+
+Banco PostgreSQL
+│
+├── usuários
+├── produtos
+├── pedidos
+├── itens_pedido
+├── orçamentos
+└── endereços
