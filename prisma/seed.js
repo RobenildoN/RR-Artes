@@ -68,7 +68,7 @@ async function main() {
       name: "Bloco de Notas Autoadesivas Neon (Post-It)",
       description: "4 blocos de cores vibrantes com 90 folhas cada, ideais para deixar anotações importantes no escritório ou caderno.",
       price: 12.90,
-      imageUrl: "https://images.unsplash.com/photo-1572245227763-7c227db0ab34?w=500&auto=format&fit=crop&q=60",
+      imageUrl: "/post_it_notes.png",
       category: "papelaria",
       stock: 60,
     },
@@ -117,7 +117,11 @@ async function main() {
       });
       console.log(`Product created: ${prod.name}`);
     } else {
-      console.log(`Product already exists: ${prod.name}`);
+      await prisma.product.update({
+        where: { id: existingProduct.id },
+        data: { imageUrl: prod.imageUrl },
+      });
+      console.log(`Product updated: ${prod.name}`);
     }
   }
 

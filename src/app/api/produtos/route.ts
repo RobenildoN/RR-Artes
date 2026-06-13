@@ -22,10 +22,15 @@ export async function GET(req: Request) {
       ];
     }
 
-    const products = await prisma.product.findMany({
+    const productsRaw = await prisma.product.findMany({
       where: whereClause,
       orderBy: { createdAt: "desc" },
     });
+
+    const products = productsRaw.map((prod) => ({
+      ...prod,
+      imageUrl: prod.name === "Bloco de Notas Autoadesivas Neon (Post-It)" ? "/post_it_notes.png" : prod.imageUrl,
+    }));
 
     return NextResponse.json({ products }, { status: 200 });
   } catch (error) {

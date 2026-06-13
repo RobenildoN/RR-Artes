@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   title: "RR Artes | Hortolândia - Papelaria, Bordados e Consertos",
   description: "Compre materiais de papelaria criativa e variedades online ou solicite orçamento para bordados personalizados e consertos de roupas de alta qualidade em Hortolândia.",
   icons: {
-    icon: "/Logo RR Artes.png",
+    icon: "/favicon.ico",
   },
 };
 

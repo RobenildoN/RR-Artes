@@ -1,7 +1,7 @@
 # 🎨 RR Artes - Sistema de Gestão e E-commerce
 
 <p align="center">
-  <img src="public/Logo RR Artes.png" alt="RR Artes Logo" width="200" />
+  <img src="public/logo-rr-artes.png" alt="RR Artes Logo" width="200" />
 </p>
 
 Bem-vindo ao repositório da **RR Artes**! Este é um sistema web moderno desenvolvido para gerenciar as operações de uma loja local em Hortolândia, abrangendo desde a venda de produtos de papelaria até a solicitação de orçamentos para serviços personalizados.

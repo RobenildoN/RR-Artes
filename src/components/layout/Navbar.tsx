@@ -32,7 +32,7 @@ export default function Navbar() {
           <div className="flex items-center">
             <Link href="/" className="group flex items-center space-x-3">
               <img
-                src="/Logo RR Artes.png"
+                src="/logo-rr-artes.png"
                 alt="Logo RR Artes"
                 className="h-10 w-10 rounded-full border border-rosa-100 dark:border-rosa-950/50 shadow-sm transition duration-300 group-hover:scale-105"
               />

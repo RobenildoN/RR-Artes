@@ -1,8 +1,26 @@
 import React from "react";
 import Link from "next/link";
 import { Scissors, BookOpen, Send, ShoppingBag, CheckCircle, ArrowRight, Heart } from "lucide-react";
+import { prisma } from "@/lib/db";
+import FeaturedCarousel from "@/components/common/FeaturedCarousel";
 
-export default function HomePage() {
+export default async function HomePage() {
+  const productsRaw = await prisma.product.findMany({
+    where: { active: true },
+    take: 8,
+    orderBy: { createdAt: "desc" },
+  });
+
+  const featuredProducts = productsRaw.map((prod) => ({
+    id: prod.id,
+    name: prod.name,
+    description: prod.description,
+    price: prod.price,
+    imageUrl: prod.name === "Bloco de Notas Autoadesivas Neon (Post-It)" ? "/post_it_notes.png" : prod.imageUrl,
+    category: prod.category,
+    stock: prod.stock,
+  }));
+
   const specialties = [
     {
       title: "Papelaria Criativa",
@@ -74,6 +92,9 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* Featured Products Carousel */}
+      <FeaturedCarousel products={featuredProducts} />
 
       {/* 2. Specialties Section */}
       <section className="py-20 bg-white dark:bg-slate-900 transition-colors duration-300">
